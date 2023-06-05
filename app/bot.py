@@ -17,11 +17,13 @@ runner = False
 with st.sidebar:
     key = st.text_input('API Key', type='password')
     base = st.text_input('API Base', value='https://demoforisraeli1.openai.azure.com/')
-    runner =  st.checkbox('Submit')
+    
     deployment_name = st.text_input('Deployment Name')
     model_name = st.text_input('Model Name')
+    runner =  st.checkbox('Submit')
     if runner:
         st.success('This is a success message!', icon="✅")
+    
 
 
 if runner:
