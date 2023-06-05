@@ -41,7 +41,7 @@ securityContext: {}
 
 service:
   port: 80
-  dnsName: csv
+  dnsName: csv-amit
   type: LoadBalancer
 ingress:
   enabled: false
