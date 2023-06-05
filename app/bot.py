@@ -18,6 +18,8 @@ with st.sidebar:
     key = st.text_input('API Key', type='password')
     base = st.text_input('API Base', value='https://demoforisraeli1.openai.azure.com/')
     runner =  st.checkbox('Submit')
+    deployment_name = st.text_input('Deployment Name')
+    model_name = st.text_input('Model Name')
     if runner:
         st.success('This is a success message!', icon="✅")
 
@@ -45,8 +47,8 @@ if runner:
 
         agent = create_csv_agent(AzureOpenAI(temperature=0 ,
                                             verbose=True,
-                                            deployment_name='text-davinci-002',
-                                            model_name="text-davinci-002", 
+                                            deployment_name=deployment_name,
+                                            model_name=model_name, 
                                             max_tokens=1000),files_data)
         agent.agent.llm_chain.prompt.template
 
